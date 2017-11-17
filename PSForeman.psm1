@@ -795,7 +795,7 @@ $ErrorActionPreference = "Stop";
 				
 				write-verbose "$($MyInvocation.InvocationName): 	Removing from SESSIONS list...";
 				if($Global:PSForeman_Storage.SESSIONS){
-					$Global:PSForeman_Storage.SESSIONS  = $Global:PSForeman_Storage.SESSIONS | ?{!$_.Equals($Sess2Remove)}
+					$Global:PSForeman_Storage.SESSIONS  = @($Global:PSForeman_Storage.SESSIONS | ?{!$_.Equals($Sess2Remove)})
 				}
 			}
 		}
